@@ -64,6 +64,15 @@ def init_db():
     """)
 
     conn.execute("""
+    CREATE TABLE IF NOT EXISTS homework (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        subject TEXT NOT NULL,
+        title TEXT NOT NULL,
+        content TEXT NOT NULL
+    )
+    """)
+
+    conn.execute("""
     CREATE TABLE IF NOT EXISTS messages (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         sender TEXT NOT NULL,
